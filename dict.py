@@ -5,6 +5,7 @@ conn = psycopg2.connect(
    user="user1",
    password="abc123"
 )
+print("This is a dictionary. Use commands list, add, delete, quit")
 
 def read_dict(C):
     cur = C.cursor()
