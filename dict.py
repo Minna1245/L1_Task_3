@@ -7,26 +7,26 @@ conn = psycopg2.connect(
 )
 print("This is a dictionary. Use commands list, add, delete, quit")
 
-def read_dict(C):
-    cur = C.cursor()
+def read_dict(connection):
+    cur = connection.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
     rows = cur.fetchall()
     cur.close()
     return rows
-def add_word(C, word, translation):
-    cur = C.cursor()
+def add_word(connection, word, translation):
+    cur = connection.cursor()
     cur.execute(f"INSERT INTO dictionary (word, translation) VALUES ('{word}', '{translation}');")
     cur.close()
-def delete_word(C, ID):
-    cur = C.cursor()
+def delete_word(connection, ID):
+    cur = connection.cursor()
     cur.execute(f"DELETE FROM dictionary WHERE id = '{ID}';")
     cur.close()
-def save_dict(C):
-    cur = C.cursor()
+def save_dict(connection):
+    cur = connection.cursor()
     cur.execute("COMMIT;")
     cur.close()
 
-def insert_word(C, word, translation):
+def insert_word(connection, word, translation):
     print("This function only prints text")
 
 while True: ## REPL - Read Execute Program Loop
