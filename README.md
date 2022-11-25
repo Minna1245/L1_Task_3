@@ -1,0 +1,1 @@
+This is a ENG-SWE dictionary. This is written by Minna Viitanen.
