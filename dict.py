@@ -26,6 +26,9 @@ def save_dict(C):
     cur.execute("COMMIT;")
     cur.close()
 
+def insert_word(C, word, translation):
+    print("This function only prints text")
+
 while True: ## REPL - Read Execute Program Loop
     cmd = input("Command: ")
     if cmd == "list":
